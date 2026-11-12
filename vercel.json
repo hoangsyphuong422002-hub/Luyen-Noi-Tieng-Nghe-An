@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "outputDirectory": "src/frontend",
+  "routes": [
+    {
+      "src": "/dataset_audios/(.*)",
+      "dest": "/dataset/audios/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/frontend/$1"
+    }
+  ]
+}

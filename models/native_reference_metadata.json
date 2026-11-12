@@ -1,0 +1,16 @@
+{
+  "train_samples": 280,
+  "validation_samples": 40,
+  "test_samples": 43,
+  "w2v_dim": 768,
+  "pca_dim": 32,
+  "pca_explained_var_ratio_sum": 0.9453138709068298,
+  "native_pairwise_sim_mean": 0.9747419953346252,
+  "native_pairwise_sim_median": 0.9775235056877136,
+  "native_pairwise_sim_std": 0.01216704398393631,
+  "native_pairwise_sim_p10": 0.9586544036865234,
+  "native_pairwise_sim_p90": 0.9870667457580566,
+  "val_to_centroid_sim_mean": 0.987301230430603,
+  "val_to_centroid_sim_median": 0.9890902042388916,
+  "model_name": "nguyenvulebinh/wav2vec2-base-vietnamese-250h"
+}

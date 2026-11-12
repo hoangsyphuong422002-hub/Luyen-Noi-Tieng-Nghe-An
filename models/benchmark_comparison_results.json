@@ -1,0 +1,100 @@
+{
+  "val_set": {
+    "n": 40,
+    "baseline": {
+      "mean": 73.5,
+      "median": 74.1,
+      "std": 8.19,
+      "min": 48.3,
+      "max": 90.1
+    },
+    "upgraded_general": {
+      "mean": 90.92,
+      "median": 91.7,
+      "std": 5.18,
+      "min": 75.9,
+      "max": 99.1
+    },
+    "upgraded_sentence_matched": {
+      "mean": 100.0,
+      "median": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "max": 100.0
+    }
+  },
+  "test_set": {
+    "n": 43,
+    "baseline": {
+      "mean": 70.58,
+      "median": 71.6,
+      "std": 11.99,
+      "min": 18.9,
+      "max": 90.9
+    },
+    "upgraded_general": {
+      "mean": 91.21,
+      "median": 92.1,
+      "std": 5.49,
+      "min": 78.2,
+      "max": 98.7
+    },
+    "upgraded_sentence_matched": {
+      "mean": 100.0,
+      "median": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "max": 100.0
+    }
+  },
+  "latency_ms": {
+    "baseline_mean": 49.09,
+    "baseline_p50": 47.34,
+    "baseline_p95": 69.79,
+    "upgraded_mean": 586.03,
+    "upgraded_p50": 584.79,
+    "upgraded_p95": 649.34
+  },
+  "edge_cases": [
+    {
+      "case": "silence",
+      "baseline_score": 0.0,
+      "baseline_valid": false,
+      "baseline_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_score": 0.0,
+      "upgraded_valid": false,
+      "upgraded_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_feedback": "Không phát hiện giọng nói (Âm lượng quá nhỏ hoặc bạn chưa nói gì)."
+    },
+    {
+      "case": "white_noise",
+      "baseline_score": 0.0,
+      "baseline_valid": false,
+      "baseline_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_score": 0.0,
+      "upgraded_valid": false,
+      "upgraded_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_feedback": "Chưa phát hiện đủ tiếng nói (Chỉ thu được 0.00s nguyên âm). Hãy đọc trọn câu nhé!"
+    },
+    {
+      "case": "sine_monotone_220hz",
+      "baseline_score": 0.0,
+      "baseline_valid": false,
+      "baseline_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_score": 0.0,
+      "upgraded_valid": false,
+      "upgraded_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_feedback": "Giọng thu âm hoàn toàn phẳng (đơn âm hoặc nhiễu quạt/điện). Hãy nói có ngữ điệu trầm bổng nhé!"
+    },
+    {
+      "case": "click_impulse",
+      "baseline_score": 0.0,
+      "baseline_valid": false,
+      "baseline_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_score": 0.0,
+      "upgraded_valid": false,
+      "upgraded_rank": "Không Phát Hiện Giọng Nói",
+      "upgraded_feedback": "Chưa phát hiện đủ tiếng nói (Chỉ thu được 0.00s nguyên âm). Hãy đọc trọn câu nhé!"
+    }
+  ]
+}

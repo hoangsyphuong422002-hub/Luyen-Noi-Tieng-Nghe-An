@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & virtualenvs
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Logs & temp files
+*.log
+*.npy
+.system_generated/
+scratch/
+test_edge_*.wav
+models/test_edge_*.wav
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
