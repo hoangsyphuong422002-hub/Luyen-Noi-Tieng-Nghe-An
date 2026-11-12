@@ -1,6 +1,13 @@
 import os
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import sys
+import tempfile
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+# Set cache directories to writable /tmp for serverless platforms (Vercel, AWS Lambda)
+if not os.environ.get("HF_HOME"):
+    os.environ["HF_HOME"] = os.path.join(tempfile.gettempdir(), "huggingface")
+if not os.environ.get("TORCH_HOME"):
+    os.environ["TORCH_HOME"] = os.path.join(tempfile.gettempdir(), "torch")
 import csv
 import random
 from typing import Optional
@@ -40,14 +47,10 @@ DATASET_DIR = os.path.join(PROJECT_ROOT, "dataset")
 AUDIOS_DIR = os.path.join(DATASET_DIR, "audios")
 METADATA_PATH = os.path.join(DATASET_DIR, "metadata.csv")
 
-# Preload inference model at startup
+# Startup event (lazy loading engine so web homepage loads instantly)
 @app.on_event("startup")
 async def startup_event():
-    try:
-        get_engine()
-        print("[VASA Backend] Upgraded Wav2Vec2 + Native Reference Bank loaded and ready!")
-    except Exception as e:
-        print(f"[VASA Backend] Warning loading model on startup: {e}")
+    print("[VASA Backend] FastAPI initialized successfully. Ready to serve requests!")
 
 
 @app.post("/api/score")

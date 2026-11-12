@@ -1,6 +1,12 @@
 import os
 import sys
+import tempfile
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+if not os.environ.get("HF_HOME"):
+    os.environ["HF_HOME"] = os.path.join(tempfile.gettempdir(), "huggingface")
+if not os.environ.get("TORCH_HOME"):
+    os.environ["TORCH_HOME"] = os.path.join(tempfile.gettempdir(), "torch")
 
 # Ensure project root is in sys.path
 _script_dir = os.path.dirname(os.path.abspath(__file__))
