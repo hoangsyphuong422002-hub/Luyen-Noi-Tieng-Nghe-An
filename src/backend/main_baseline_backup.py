@@ -20,9 +20,9 @@ if SRC_DIR not in sys.path:
 
 from src.ai.inference import score_audio_file, get_engine
 
-app = FastAPI(
-    title="VASA - Vinh Accent Prosody Assessment API",
-    description="Mini Game AI chấm điểm ngữ điệu tiếng Nghệ An bằng Auto-Encoder F0 Contour",
+_backup_app = FastAPI(
+    title="VASA - Vinh Accent Prosody Assessment API (Baseline Backup)",
+    description="Backup baseline app",
     version="1.0.0"
 )
 
