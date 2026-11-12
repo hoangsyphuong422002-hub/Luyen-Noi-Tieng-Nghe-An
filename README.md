@@ -1,3 +1,14 @@
+---
+title: Thanh Âm Xứ Nghệ - Luyện Nói Tiếng Nghệ An
+emoji: 🌾
+colorFrom: yellow
+colorTo: green
+sdk: gradio
+sdk_version: 6.31.0
+app_file: app.py
+pinned: false
+---
+
 # Thanh Âm Xứ Nghệ – Luyện Nói Tiếng Nghệ An (VASA)
 
 > **Hồn quê xứ Nghệ – Công nghệ AI bảo tồn tiếng nói quê hương**  
