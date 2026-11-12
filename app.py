@@ -6,6 +6,17 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
+# Hugging Face ZeroGPU compatibility
+try:
+    import spaces
+    @spaces.GPU(duration=60)
+    def zerogpu_probe():
+        import torch
+        return torch.cuda.is_available()
+    print("[HuggingFace] ZeroGPU support detected.")
+except Exception as e:
+    print(f"[HuggingFace] CPU mode: {e}")
+
 from src.backend.main import app
 
 # Hugging Face Spaces Gradio SDK compatibility (100% Free tier)
